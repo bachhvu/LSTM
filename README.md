@@ -1,6 +1,6 @@
 https://bachvu98.github.io/LSTM/
 
-<dir='rtl>
+<p align="justify">
 
 # **Recurrent Neural Network**
 Taking stock market data for a specific stock as an example of sequential data. Machine learning model can base on many characteristics such as the open, high, low, close values and volume of trades each day to learn to predict stock prices. Although the stock price depends on these characteristics, it is also largely depending on the stock value of the previous few days. In fact, for traders, the value (or the trend) of these previous days is an important determinant of prediction. 
@@ -75,5 +75,4 @@ In summary, RNNs are good at processing sequential data, but they have a short-t
 
 # **References**
 Hochreiter, S. & Schimidhuber, J., 1997. Long Short_term Memory. Neural Computation, 9(8).
-
-<div dir='rtl>
+</p>
