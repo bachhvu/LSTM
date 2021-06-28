@@ -1,4 +1,4 @@
-https://bachhvu.github.io/LSTM/
+https://bachhvu.github.io/Understanding-RNN-and-LSTM/
 
 
 
