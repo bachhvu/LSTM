@@ -8,11 +8,14 @@ Recurrent neural networks can solve this problem. They are neural networks with 
   <img src="https://user-images.githubusercontent.com/46337239/123663401-43a64f00-d82e-11eb-9abf-9d5bad1f0f4d.png?raw=true" alt="Sublime's custom image"/>
 </p>
 
-Figure 1. RNN architecture
+<figcaption style="text-align:center">Figure 1. RNN architecture</figcaption>
 
-![Picture2](https://user-images.githubusercontent.com/46337239/123663426-4acd5d00-d82e-11eb-8cc8-c4e90c1e1d46.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46337239/123663426-4acd5d00-d82e-11eb-8cc8-c4e90c1e1d46.png?raw=true" alt="Sublime's custom image"/>
+</p>
 
-Figure 2. Unrolled RNN architecture
+<figcaption style="text-align:center">Figure 2. Unrolled RNN architecture</figcaption>
+
 
 During processing, the RNN passes the hidden state from before to the next step in the sequence. The hidden state acts as the memory of the neural network and saves information on previous data previously viewed by the network. The input at a time-step and the hidden state from the previous time step are combined to form a vector. The vector is passed through a tanh activation function to obtain the output of a new hidden state.
 
