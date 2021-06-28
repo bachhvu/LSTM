@@ -6,16 +6,17 @@ Recurrent neural networks can solve this problem. They are neural networks with 
   
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46337239/123663401-43a64f00-d82e-11eb-9abf-9d5bad1f0f4d.png?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 1. RNN architecture</em>
 </p>
 
-<figcaption style="text-align:center">Figure 1. RNN architecture</figcaption>
+<figcaption style="text-align:center"></figcaption>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46337239/123663426-4acd5d00-d82e-11eb-8cc8-c4e90c1e1d46.png?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 2. Unrolled RNN architecture</em>
 </p>
-
-<figcaption style="text-align:center">Figure 2. Unrolled RNN architecture</figcaption>
-
 
 During processing, the RNN passes the hidden state from before to the next step in the sequence. The hidden state acts as the memory of the neural network and saves information on previous data previously viewed by the network. The input at a time-step and the hidden state from the previous time step are combined to form a vector. The vector is passed through a tanh activation function to obtain the output of a new hidden state.
 
@@ -27,9 +28,13 @@ In neural network, the gradient is the value used to update the weight. Due to t
 # **Long Short-Term Memory (LSTM)**
 Long Short-Term Memory Networks are a kinds of RNN and has a similar flow as a recurrent neural network. They were introduced by Hochreiter & Schmidhuber (1997). It is an upgrade to resolve RNN learning failure when there are more than 5-10 discrete time steps between the relevant input event and the target signal in past observations (vanishing/exploding gradient problem). The key to LSTMs is by introducing a memory unit called "cell state".  At each time step, the LSTM unit obtains 3 different pieces of information: the current input data, the short-term memory (hidden state) of the previous unit (similar to the hidden state in RNN), and finally the long-term memory (cell state).
 
-![Picture3](https://user-images.githubusercontent.com/46337239/123663804-aa2b6d00-d82e-11eb-8d74-5cd335de2ba0.jpg)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46337239/123663804-aa2b6d00-d82e-11eb-8d74-5cd335de2ba0.jpg?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 3. LSTM architecture</em>
+</p>
 
-Figure 3. LSTM architecture
+
 
 Short Term and Long-Term Memory cells are like mini neural networks designed to enable memory in larger neural networks. This is achieved through the use of recurrent nodes in the LSTM cell. The node has an edge looping back with a weight of 1, which means that in each iteration of feedforward, the cell can retain information from the previous step and all previous steps. Since the weight of the looping connection is 1, the old memory will not disappear over time like in traditional RNN.
 
@@ -37,21 +42,28 @@ LSTM has 3 gates, to regulate the information flow in an LSTM cell.
 
 The forget gate decides to keep or discard information from the long-term memory based on current input and previous hidden states. This is done through the sigmoid activation function. This function only returns 0 and 1 for input. Once multiplied by something, it either drop (multiplied by zero results in zero) or passes completely (multiplied by 1 results in the same value)
 
-![Picture4](https://user-images.githubusercontent.com/46337239/123663845-b44d6b80-d82e-11eb-8785-3993cb41369c.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46337239/123663845-b44d6b80-d82e-11eb-8785-3993cb41369c.png?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 4. Forget Gate</em>
+</p>
 
-Figure 4. Forget Gate
 
 The input gate decides what new information to store in the long-term memory. At this point, the previous hidden state and the current input is passed into a sigmoid function, which determines the values need to be updated by converting it between 0 and 1. This is very similar to the forget gate and can removes any unwanted information from the current input. The hidden state and current input are also passed into the tanh activation function to compress the value to always be between -1 and 1 which help regulating the network. Next, the output from tanh and sigmoid are then multiplied, and the results represents the information that will be retained in long-term memory. Finally, this output will be added to the cell state to update it.
 
-![Picture5](https://user-images.githubusercontent.com/46337239/123663875-ba434c80-d82e-11eb-87ae-d8a68c504f89.png)
-
-Figure 5. Input Gate
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46337239/123663875-ba434c80-d82e-11eb-87ae-d8a68c504f89.png?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 5. Input Gate</em>
+</p>
 
 The output gate decides what the next hidden state should be. The current input and hidden state will be passed through a sigmoid function. Then, the cell state is put through a tanh activation function. The output from these two processed is multiplied to produce the new hidden state for the next time step.
 
-![Picture6](https://user-images.githubusercontent.com/46337239/123663904-bfa09700-d82e-11eb-99c6-ae14cd2ff2c4.png)
-
-Figure 6. Output Gate
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46337239/123663904-bfa09700-d82e-11eb-99c6-ae14cd2ff2c4.png?raw=true" alt="Sublime's custom image"/>
+  <br>
+    <em>Figure 6. Output Gate</em>
+</p>
 
 ## **Variant**
 The RNNs and LSTMs architecture stated above are only capable of capturing the dependencies in only one direction. This poses a challenge when performing tasks such as machine translation, where we also need context from words we haven’t seen yet. This results in bidirectional RNNs and LSTMs, which is a variant of RNN and LSTM that works in both ways. Bidirectional LSTM is frequently seen in papers and application because to its utility in grasping the context. 
